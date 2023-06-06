@@ -1,0 +1,11 @@
+//reset customer
+DELETE FROM dbo.Customer 
+DBCC CHECKIDENT ('dbo.Customer', RESEED, 0); 
+//reset user
+DELETE FROM dbo.[User] 
+DBCC CHECKIDENT ('dbo.[User]', RESEED, 0);
+//reset Moderator
+DELETE FROM dbo.Moderator 
+DBCC CHECKIDENT ('dbo.Moderator', RESEED, 0); 
+//reset dnis
+DELETE FROM dbo.DNIS WHERE ID NOT IN (8,9,10,11,12,13,14,20) //default id
